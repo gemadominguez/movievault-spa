@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { searchMovies, getGenres } from '../tmdb'
 import MovieCard from './MovieCard'
 import TopHeader from '../components/TopHeader'
@@ -49,7 +49,6 @@ function SearchResults() {
 
       <div className={`grid-12 ${styles['search-results']}`}>
         {results.map((movie) => (
-        <Link to={`/movie/${movie.id}`} key={movie.id}>
 
           <MovieCard
             key={movie.id}
@@ -59,7 +58,6 @@ function SearchResults() {
             image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             id={movie.id}
           />
-        </Link>
         ))}
       </div>
     </div>
